@@ -1,2 +1,0 @@
-var e={};Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(e,n,r){n in e?Object.defineProperty(e,n,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[n]=r;return e};const n=document.querySelector(".sidebar");window.addEventListener("resize",(function(){window.innerWidth>1090?n.classList.remove("collapse"):n.classList.add("collapse")}));
-//# sourceMappingURL=index.5bd6c095.js.map
