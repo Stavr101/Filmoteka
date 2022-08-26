@@ -1,28 +1,49 @@
-// import Pagination from 'tui-pagination';
+import Pagination from 'tui-pagination';
 
-// function initializePagination() {
-//   const container = document.querySelector('.pagination');
+function initializePagination() {
+  const container = document.querySelector('.pagination');
 
-//   const pagination = new Pagination(container, {
-//     totalItems: 100,
-//     itemsPerPage: 20,
-//     visiblePages: 5,
-//     centerAlign: true,
-//   });
+  const pagination = new Pagination(container, {
+    totalItems: 10,
+    itemsPerPage: 10,
+    visiblePages: 5,
+    page: 1,
+    centerAlign: false,
+    firstItemClassName: 'first-child',
+    lastItemClassName: 'last-child',
+    template: {
+      page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+      currentPage:
+        '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+      moveButton:
+        '<a href="#" class="tui-page-btn tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '</a>',
+      disabledMoveButton:
+        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '</span>',
+      moreButton:
+        '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+        '<span class="tui-ico-ellip">...</span>' +
+        '</a>',
+    },
+  });
 
-//   pagination.on('beforeMove', function (eventData) {
-//     const params = new URLSearchParams(window.location.search);
-//     params.set('page', eventData.page);
-//     history.pushState(null, null, '?' + params.toString());
-//   });
+  paganation.on('beforeMove', event => {
+    const currentPage = event.page;
 
-//   pagination.on('afterMove', function (eventData) {
-//     if (pagination._options.totalItems <= 20) {
-//       container.innerHTML = '';
-//     }
-//   });
+    if (currentPage === 10) {
+      return false;
+    }
+  });
 
-//   return pagination;
-// }
+  paganation.on('afterMove', event => {
+    const currentPage = event.page;
+    console.log(currentPage);
+  });
 
-// export { initializePagination as default };
+  return pagination;
+}
+
+export { initializePagination as default };

@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
+    <link rel="stylesheet" href="./sass/layout/_pagination.scss" />
     <link rel="stylesheet" href="./sass/index.scss" />
+
     <script type="module" src="./index.js"></script>
   </head>
   <body>
@@ -12,17 +14,23 @@
       <div class="container">
         <include src="./partials/aside.html"></include>
 
-        <!-- <div class="pagination"></div> -->
-
         <section class="section">
-
           <include src="./partials/header.html"></include>
           <div class="main-container">
             <h1 class="main-header anim" style="--delay: 0s">Discover</h1>
             <include src="./partials/discover-card.html"></include>
 
-            
             <include src="./partials/video-card.html"></include>
+            <div class="pagination">
+              <div>
+                <a class="tui-page-btn tui-first">First</a>
+                <a class="tui-page-btn tui-prev-is-ellip">Previous</a>
+              </div>
+              <div>
+                <a class="tui-page-btn tui-next-is-ellip">Next</a>
+                <a class="tui-page-btn tui-last">Last</a>
+              </div>
+            </div>
             <include src="./partials/footer.html"></include>
             <include src="./partials/modal-our-team.html"></include>
           </div>
