@@ -22,8 +22,7 @@ import { authUser } from './js/submit-form';
 import './js/create-markup-playlist';
 
 import './js/load-playlist';
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/dist/css/splide.min.css';
+
 
 import { onModalShowInfoCard } from './js/on-modal-show-infocard';
 
